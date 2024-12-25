@@ -13,11 +13,20 @@ final class NetworkManager: NetworkManagerProtocol {
             throw NetworkError.invalidURL
         }
         
+        print("🌐 Fetching URL: \(url.absoluteString)")
+        
         let (data, response) = try await URLSession.shared.data(from: url)
+        
+        // Log raw response
+        if let jsonString = String(data: data, encoding: .utf8) {
+            print("📦 Raw API Response for \(endpoint): \(jsonString)")
+        }
         
         guard let response = response as? HTTPURLResponse else {
             throw NetworkError.invalidResponse
         }
+        
+        print("🔍 Status Code: \(response.statusCode)")
         
         switch response.statusCode {
         case 200...299:
@@ -26,6 +35,7 @@ final class NetworkManager: NetworkManagerProtocol {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 return try decoder.decode(T.self, from: data)
             } catch {
+                print("❌ Decoding Error: \(error)")
                 throw NetworkError.invalidData
             }
         case 401:

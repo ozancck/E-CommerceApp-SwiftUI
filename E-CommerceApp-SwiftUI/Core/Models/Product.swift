@@ -5,7 +5,7 @@ struct ProductResponse: Codable {
     let total, skip, limit: Int
 }
 
-struct Product: Codable, Identifiable {
+struct Product: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
     let description: String
@@ -13,12 +13,17 @@ struct Product: Codable, Identifiable {
     let discountPercentage: Double
     let rating: Double
     let stock: Int
-    let brand: String?  // Opsiyonel yaptık
+    let brand: String?
     let category: String
     let thumbnail: String
     let images: [String]
     
-    // Opsiyonel alanlar
-    let tags: [String]?
-    let availabilityStatus: String?
+    // Hashable protokolü için
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
