@@ -45,27 +45,6 @@ cd E-CommerceApp-SwiftUI
 
 3. Open the Xcode project and run.
 
-## 🧪 Testing
-
-The project includes both UI tests and unit tests to ensure code reliability and maintainability.
-
-### Unit Tests
-Unit tests validate code units (e.g., ViewModel methods) in isolation. These tests are located in the ECommerceAppTests target.
-
-To run unit tests:
-1. Open the Xcode project
-2. Select ECommerceAppTests from the target list
-3. Press Cmd + U to run unit tests
-
-### UI Tests
-UI tests cover core user flows and interactions in the app. These tests are located in the ECommerceAppUITests target.
-
-To run UI tests:
-1. Open the Xcode project
-2. Select ECommerceAppUITests from the target list
-3. Choose a simulator or connected iOS device
-4. Press Cmd + U to run UI tests
-
 ## 🌐 API
 
 The application uses [DummyJSON](https://dummyjson.com/) API to fetch product data.
