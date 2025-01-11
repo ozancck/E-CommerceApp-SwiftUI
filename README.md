@@ -57,7 +57,12 @@ git clone https://github.com/yourusername/E-CommerceApp-SwiftUI.git
 
 ## 📱 Screenshots
 
-[Screenshots will be added here]
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/84ff6097-54b3-462a-9e92-91cbaee4b75c" width="200" />
+  <img src="https://github.com/user-attachments/assets/ae73203a-304c-474a-a85d-ef1fddfeada3" width="200" /> 
+  <img src="https://github.com/user-attachments/assets/0e7534ae-d883-4da4-856d-c67ee6969101" width="200" />
+  <img src="https://github.com/user-attachments/assets/99ca9f9b-93dd-4048-a046-982d165afa58" width="200" />
+</p>
 
 ## 📝 License
 
